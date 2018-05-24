@@ -6,6 +6,10 @@ class Dollar {
   times(multipliter) {
     return new Dollar(this.amount * multipliter);
   }
+
+  equals(dollar) {
+    return this.amount === dollar.amount;
+  }
 }
 
 module.exports = Dollar;
