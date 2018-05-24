@@ -12,6 +12,7 @@ test('testEquality', () => {
   expect(new Dollar(5).equals(new Dollar(6))).not.toBeTruthy();
   expect(new Franc(5).equals(new Franc(5))).toBeTruthy();
   expect(new Franc(5).equals(new Franc(6))).not.toBeTruthy();
+  expect(new Franc(5).equals(new Dollar(5))).not.toBeTruthy();
 });
 
 test('testFrancMultiplication', () => {
