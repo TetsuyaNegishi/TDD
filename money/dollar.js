@@ -4,7 +4,7 @@ class Dollar {
   }
 
   times(multipliter) {
-    this.amount *= multipliter;
+    return new Dollar(this.amount * multipliter);
   }
 }
 
