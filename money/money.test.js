@@ -19,3 +19,9 @@ test('testFrancMultiplication', () => {
   expect(five.times(2).amount).toBe(10);
   expect(five.times(3).amount).toBe(15);
 });
+
+test('testCurrency', () => {
+  const five = Money.franc(5);
+  expect(Money.dollar(1).getCurrency()).toBe('USD');
+  expect(Money.franc(1).getCurrency()).toBe('CHF');
+});

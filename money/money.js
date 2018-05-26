@@ -1,6 +1,7 @@
 class Money {
-  constructor(amount) {
+  constructor(amount, currency) {
     this.amount = amount;
+    this.currency = currency;
   }
 
   equals(money) {
@@ -11,14 +12,18 @@ class Money {
     throw new Error('Not Implemented');
   }
 
+  getCurrency() {
+    return this.currency;
+  }
+
   static dollar(amount) {
     const Dollar = require('./dollar');
-    return new Dollar(amount);
+    return new Dollar(amount, "USD");
   }
 
   static franc(amount) {
     const Franc = require('./franc');
-    return new Franc(amount);
+    return new Franc(amount, "CHF");
   }
 }
 
