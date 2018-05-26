@@ -1,5 +1,5 @@
 class Expression { // interfaceのつもり
-  reduce(to) { // abstract
+  reduce(bank, to) { // abstract
     throw new Error('Not Implemented');
   }
 }

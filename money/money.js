@@ -24,8 +24,9 @@ class Money extends Expression{
     return new Sum(this, addend);
   }
 
-  reduce(to) {
-    return this;
+  reduce(bank, to) {
+    const rate = bank.rate(this.currency, to);
+    return new Money(this.amount / rate, to);
   }
 
   static dollar(amount) {
