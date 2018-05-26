@@ -5,11 +5,11 @@ class Money {
   }
 
   equals(money) {
-    return this.amount === money.amount && this.constructor.name === money.constructor.name;
+    return this.amount === money.amount && this.getCurrency() === money.getCurrency();
   }
 
-  times() { // abstractメソッド
-    throw new Error('Not Implemented');
+  times(multipliter) {
+    return new Money(this.amount * multipliter, this.currency);
   }
 
   getCurrency() {

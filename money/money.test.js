@@ -1,4 +1,5 @@
 const Money = require('./money');
+const Franc = require('./franc');
 
 test('testMultiplication', () => {
   const five = Money.dollar(5);
@@ -25,3 +26,7 @@ test('testCurrency', () => {
   expect(Money.dollar(1).getCurrency()).toBe('USD');
   expect(Money.franc(1).getCurrency()).toBe('CHF');
 });
+
+test('testDifferentClassEquality', () => {
+  expect(new Money(10, "CHF").equals(new Franc(10, "CHF"))).toBeTruthy();
+})
