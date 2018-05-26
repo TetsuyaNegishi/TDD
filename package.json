@@ -4,6 +4,6 @@
   },
   "scripts": {
     "test": "jest",
-    "test:coverage": "npm test --coverage"
+    "test:coverage": "jest --coverage"
   }
 }
