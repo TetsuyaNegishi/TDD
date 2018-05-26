@@ -17,13 +17,11 @@ class Money {
   }
 
   static dollar(amount) {
-    const Dollar = require('./dollar');
-    return new Dollar(amount, "USD");
+    return new Money(amount, "USD");
   }
 
   static franc(amount) {
-    const Franc = require('./franc');
-    return new Franc(amount, "CHF");
+    return new Money(amount, "CHF");
   }
 }
 
