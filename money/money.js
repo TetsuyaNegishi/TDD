@@ -1,5 +1,8 @@
-class Money {
+const expression = require('./expression');
+
+class Money extends expression{
   constructor(amount, currency) {
+    super();
     this.amount = amount;
     this.currency = currency;
   }
@@ -14,6 +17,10 @@ class Money {
 
   getCurrency() {
     return this.currency;
+  }
+
+  plus(addend) {
+    return new Money(this.amount + addend.amount, this.currency);
   }
 
   static dollar(amount) {

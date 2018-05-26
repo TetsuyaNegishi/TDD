@@ -1,4 +1,5 @@
 const Money = require('./money');
+const Bank = require('./bank');
 
 test('testMultiplication', () => {
   const five = Money.dollar(5);
@@ -17,3 +18,11 @@ test('testCurrency', () => {
   expect(Money.dollar(1).getCurrency()).toBe('USD');
   expect(Money.franc(1).getCurrency()).toBe('CHF');
 });
+
+test('testSimpleAddition', () => {
+  const five = Money.dollar(5);
+  const sum = five.plus(five);
+  const bank = new Bank();
+  const reduced = bank.reduce(sum, 'USD');
+  expect(reduced.equals(Money.dollar(10))).toBeTruthy();
+})
