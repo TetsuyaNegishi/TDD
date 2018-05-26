@@ -2,7 +2,7 @@ const Money = require('./money');
 
 class Bank {
   reduce(source, to) {
-    return Money.dollar(10);
+    return source.reduce(to);
   }
 }
 

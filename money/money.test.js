@@ -1,5 +1,6 @@
 const Money = require('./money');
 const Bank = require('./bank');
+const Sum = require('./sum');
 
 test('testMultiplication', () => {
   const five = Money.dollar(5);
@@ -21,8 +22,22 @@ test('testCurrency', () => {
 
 test('testSimpleAddition', () => {
   const five = Money.dollar(5);
-  const sum = five.plus(five);
+  const result = five.plus(five);
+  const sum = result;
   const bank = new Bank();
   const reduced = bank.reduce(sum, 'USD');
   expect(reduced.equals(Money.dollar(10))).toBeTruthy();
+})
+
+test('testReduceSum', () => {
+  const sum = new Sum(Money.dollar(3), Money.dollar(4));
+  const bank = new Bank();
+  const result = bank.reduce(sum, "USD");
+  expect(Money.dollar(7).equals(result)).toBeTruthy();
+})
+
+test('testReduceMoney', () => {
+  const bank = new Bank();
+  const result = bank.reduce(Money.dollar(1), "USD");
+  expect(Money.dollar(1).equals(result));
 })

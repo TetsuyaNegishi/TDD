@@ -1,6 +1,7 @@
-const expression = require('./expression');
+const Expression = require('./expression');
+const Sum = require('./sum');
 
-class Money extends expression{
+class Money extends Expression{
   constructor(amount, currency) {
     super();
     this.amount = amount;
@@ -20,7 +21,11 @@ class Money extends expression{
   }
 
   plus(addend) {
-    return new Money(this.amount + addend.amount, this.currency);
+    return new Sum(this, addend);
+  }
+
+  reduce(to) {
+    return this;
   }
 
   static dollar(amount) {
